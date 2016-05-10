@@ -4,7 +4,6 @@ require('styles/loginBox.css');
 import React from 'react';
 import userData from '../data/users'
 
-import Link from 'react-router'
 let yeomanImage = require('../images/yeoman.png');
 
 class LoginBox extends React.Component {
@@ -15,7 +14,6 @@ class LoginBox extends React.Component {
 	/*React v0.12 中，事件处理程序返回 false 不再停止事件传播，
 	    取而代之，应该根据需要手动触发 e.stopPropagation() 或 
 	    e.preventDefault()。*/
-	//FE Validate
 	validate(e) {
 		e.preventDefault();
 		var name = userData.username;
@@ -35,9 +33,6 @@ class LoginBox extends React.Component {
 			this.setState({
 				code : 1
 			})
-			
-			//BEValidate
-			this.props.validate();
 		}
 	}
 	

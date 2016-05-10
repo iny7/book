@@ -8,10 +8,9 @@ body {
 
 }
 .index{
-  display: flex;
+  
   height: 100%;
-  justify-content: center;
-  align-items: center;
+
 }
 .index img {
   margin: 40px auto;
@@ -27,4 +26,11 @@ body {
   border: 1px solid #000;
   border-width: 1px 0;
   background: #666;
+}
+.loginPage{
+  width:100%;
+  height:100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
