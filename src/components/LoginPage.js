@@ -2,7 +2,7 @@ require('normalize.css/normalize.css');
 
 import React from 'react';
 import userData from '../data/users';
-
+import $ from 'jquery'
 import Link from 'react-router';
 
 import LoginBox from './LoginBox';
@@ -10,7 +10,12 @@ import LoginBox from './LoginBox';
 function validate(){
 	var location = this.props.location;
 	
+	console.log('pre')
 	//do BE Validate here
+	$.get('http://127.0.0.1:8080', function(data){
+		console.log(data)
+	})
+	console.log('end')
 	
 
 	if (location.state && location.state.nextPathname) {

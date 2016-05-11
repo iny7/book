@@ -18,6 +18,7 @@ class LoginBox extends React.Component {
 	//FE Validate
 	validate(e) {
 		e.preventDefault();
+		
 		var name = userData.username;
 		var pass = userData.password;
 		var inputName = this.refs.username.value;
