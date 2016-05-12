@@ -4,11 +4,13 @@ import ReactDOM from 'react-dom';
 import {Router, Route, IndexRoute, browserHistory} from 'react-router';
 
 import App from './components/Main';
+
 import LoginPage from './components/LoginPage';
 import Student from './components/Student';
+import BookList from './components/BookList';
 import Admin from './components/Admin';
 import Info from './components/Info';
-import BookList from './components/BookList';
+
 
 function requireLogin(nextState, replaceState) {
 	var hasLogin = true;
@@ -20,12 +22,13 @@ function requireLogin(nextState, replaceState) {
 ReactDOM.render(
 	<Router history={browserHistory}>
 		<Route path="/" component={App}>
-			<IndexRoute component={LoginPage} />
+			{/*make using components as IndexRoute when test*/}
+			{/*<IndexRoute components={LoginPage} />*/}
 			<Route path="login" component={LoginPage} />
-			<Route onEnter={requireLogin} path="student" component={Student}>
+			<IndexRoute path="student" onEnter={requireLogin} component={Student}>
 				<IndexRoute component={Info} />
 				<Route path="books" component={BookList}></Route>
-			</Route>
+			</IndexRoute>
 			<Route path="admin" component={Admin}>
 				<IndexRoute component={Info} />
 				<Route path="books" component={BookList}></Route>

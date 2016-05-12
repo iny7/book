@@ -2,7 +2,7 @@ require('normalize.css/normalize.css');
 
 import React from 'react';
 import userData from '../data/users';
-import $ from 'jquery'
+// import $ from 'jquery'
 import Link from 'react-router';
 
 import LoginBox from './LoginBox';
@@ -10,12 +10,12 @@ import LoginBox from './LoginBox';
 function validate(){
 	var location = this.props.location;
 	
-	console.log('pre')
+	// console.log('pre')
 	//do BE Validate here
-	$.get('http://127.0.0.1:8080', function(data){
-		console.log(data)
-	})
-	console.log('end')
+	// $.get('http://127.0.0.1:8080', function(data){
+	// 	console.log(data)
+	// })
+	// console.log('end')
 	
 
 	if (location.state && location.state.nextPathname) {
@@ -34,7 +34,7 @@ class LoginPage extends React.Component {
 	render() {
 
 	    return (
-	    	<section className="loginPage">
+	    	<section className="loginPage">d
 	    		<LoginBox validate={validate.bind(this)}
 	    			dragable/>
 		    </section>

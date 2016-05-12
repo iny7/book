@@ -1,8 +1,11 @@
 require('normalize.css/normalize.css');
-require('styles/loginBox.css');
+require('styles/student.css');
 
 import React from 'react';
-import userData from '../data/users'
+
+import Banner from './Banner';
+import Switch from './Switch';
+import BookList from './BookList';
 
 class Student extends React.Component {
 	//in ES6, you can not use getIntialState() {} to initial react component
@@ -13,8 +16,10 @@ class Student extends React.Component {
 	render() {
 		
 	    return (
-	    	<section className="loginBox">
-	    		student
+	    	<section>
+	    		<Banner />
+	    		<Switch />
+	    		<BookList />
 		    </section>
 	      
 	    );
