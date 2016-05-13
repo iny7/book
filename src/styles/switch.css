@@ -16,7 +16,7 @@
 	clear: both;
 }
 .switch input{
-	/*display: none;*/
+	display: none;
 }
 .switch label{
 	display: inline-block;
@@ -27,6 +27,7 @@
 	font-weight: bold;
 	/*line-height: 30px;*/
 	text-align: center;
+	transform-style: preserve-3d;
 	
 	/*文字不可选择*/
 	-moz-user-select: none; 
@@ -36,7 +37,6 @@
 	user-select: none;
 }
 .switch input:checked+label{
-	transform-style: preserve-3d;
 	background-color: #F60;
 }
 .switch label:first-of-type{
