@@ -1,0 +1,16 @@
+.bookList{
+	overflow:hidden;
+}
+.bookList li{
+	float:left;
+	width:30%;
+}
+.book{
+	box-sizing:border-box;
+	height:370px;
+	padding:20px;
+}
+.book img{
+	width:100%;
+	height:100%;
+}

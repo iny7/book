@@ -2,9 +2,8 @@ require('normalize.css/normalize.css');
 require('styles/bookList.css');
 
 import React from 'react';
-import Book from './Book'
 
-class BookList extends React.Component {
+class Book extends React.Component {
 	//in ES6, you can not use getIntialState() {} to initial react component
 	constructor(props, context) {
 	    super(props, context);
@@ -14,16 +13,18 @@ class BookList extends React.Component {
 	    e.preventDefault()。*/
 
 	render() {
+		var book = this.props.value;
+		var name = book.name;
+		var author = book.author;
+		var url = book.url;
 		
 	    return (
-	    	<ul className="bookList">
-	    		{this.props.books.map(function(elem, index) {
-	    			return <li key={index}><Book value={elem} /></li>
-	    		})}
-		    </ul>
-	      
+    		<figure className="book">
+	    		<img src={url} alt={name} />
+    			<figcaption>{name}</figcaption>
+		    </figure>
 	    );
 	}
 }
 
-export default BookList;
+export default Book;

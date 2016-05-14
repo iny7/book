@@ -7,12 +7,18 @@ body {
   background: #222;
 
 }
-.index{
-  
-  height: 100%;
-
+ul,ol{
+  margin:0;
+  padding:0;
+  list-style:none;
 }
-.index img {
+figure{
+  margin:0;
+}
+.index{
+  height: 100%;
+}
+/* .index img {
   margin: 40px auto;
   border-radius: 4px;
   background: #fff;
@@ -26,7 +32,7 @@ body {
   border: 1px solid #000;
   border-width: 1px 0;
   background: #666;
-}
+} */
 .loginPage{
   width:100%;
   height:100%;
