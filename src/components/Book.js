@@ -13,6 +13,12 @@ class Book extends React.Component {
 	/*React v0.12 中，事件处理程序返回 false 不再停止事件传播，
 	    取而代之，应该根据需要手动触发 e.stopPropagation() 或 
 	    e.preventDefault()。*/
+	borrow(id, e) {
+		// console.log(arguments)
+		e.stopPropagation();
+		e.preventDefault();
+		alert("borrow"+id)
+	}
 
 	render() {
 		var book = this.props.value;
@@ -22,10 +28,10 @@ class Book extends React.Component {
 		var url = book.url;
 		
 	    return (
-	    	<Link to={'/student/books/'+id} className="book" href="">
+	    	<Link to={'/books/'+id} className="book" href="">
 	    		<figure>
 	    			<div className="mask">
-	    				<Button value="借阅"/>
+	    				<Button clickHandler={this.borrow.bind(this, id)} value="借阅"/>
 	    			</div>
 		    		<img src={url} alt={name} />
 	    			<figcaption>{name}</figcaption>

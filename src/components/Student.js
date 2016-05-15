@@ -5,7 +5,7 @@ import React from 'react';
 import Banner from './Banner';
 import BookList from './BookList';
 
-
+/*注意在不用Flux的情况下,向this.props.children传props的方法*/
 class Student extends React.Component {
 	/*getInitialState was defined on Student, 
 	a plain JavaScript class. This is only supported

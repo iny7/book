@@ -15,10 +15,8 @@ class BookPage extends React.Component {
 	    e.preventDefault()。*/
 
 	render() {
-		
-		
 	    return (
-	    	<div>book page</div>
+	    	<div>{this.props.params.id}</div>
 	    );
 	}
 }

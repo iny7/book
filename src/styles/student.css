@@ -1,5 +1,6 @@
 .toolBar{
-	padding-left:5%;
+	text-align:center;
+	/* padding-left:5%; */
 }
 .toolBar input[type="text"]{
 	height:30px;
