@@ -4,8 +4,7 @@ import React from 'react';
 
 import Banner from './Banner';
 import BookList from './BookList';
-import Switch from './grain/Switch';
-import Button from './grain/Button';
+
 
 class Student extends React.Component {
 	/*getInitialState was defined on Student, 
@@ -44,16 +43,22 @@ class Student extends React.Component {
 			books : books
 		}
 	}
+	/*{React.Children.map()*/
 /*<BookList books={books}/>*/
 	componentDidMount() {
 	}
 	
 	render() {
 		var books = this.state.books;
+
+		var children = React.Children.map(this.props.children, function(item){
+			return React.cloneElement(item, {books : books})
+		})
+
 	    return (
 	    	<section className="student">
 	    		<Banner />
-	    		{this.props.children}
+	    		{children}
 		    </section>
 	      
 	    );
