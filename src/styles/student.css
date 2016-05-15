@@ -1,7 +1,11 @@
-.student{
-	/* width:100%; */
-	/* height:100%; */
-	/* display:flex; */
-	/* flex-direction:column; */
-	font-size: 20px;
+.toolBar{
+	padding-left:5%;
+}
+.toolBar input[type="text"]{
+	height:30px;
+	width:15em;
+	/* outline:none; */
+}
+.toolBar input[type="text"]:focus{
+	outline:3px solid #F60;
 }

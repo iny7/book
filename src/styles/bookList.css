@@ -3,12 +3,41 @@
 }
 .bookList li{
 	float:left;
-	width:30%;
+	width:33.3%;
 }
 .book{
-	box-sizing:border-box;
-	height:370px;
-	padding:20px;
+	
+	display:block;
+	margin:30px;
+}
+.book .mask{
+	position:absolute;
+	height:100%;
+	width:100%;
+	text-align:center;
+	background-color:rgba(0, 0, 0, .5);
+	/* display:none; */
+}
+.book .mask button{
+	position:absolute;
+	left:0;
+	right:0;
+	top:0;
+	bottom:0;
+	margin:auto;
+}
+.book:hover .mask{
+	display:block;
+}
+.book figure{
+	position:relative;
+	height:330px;
+	border-radius:8px;
+	overflow:hidden;
+}
+.book figcaption{
+	padding:10px 0;
+	text-align:center;
 }
 .book img{
 	width:100%;

@@ -16,21 +16,25 @@ class Student extends React.Component {
 	    super(props, context);
 	    var books = [
 			{
+				'id' : 1,
 				'name' : '世界尽头与冷酷仙境',
 				'author' : '村上春树',
 				'url' : '/images/1.jpg'
 			},
 			{
+				'id' : 2,
 				'name' : '了不起的盖茨比',
 				'author' : '歪果仁',
 				'url' : '/images/2.jpg'
 			},
 			{
+				'id' : 3,
 				'name' : '幻夜',
 				'author' : '东野圭吾',
 				'url' : '/images/3.jpg'
 			},
 			{
+				'id' : 4,
 				'name' : '白夜行',
 				'author' : '东野圭吾',
 				'url' : '/images/4.jpg'
@@ -40,7 +44,7 @@ class Student extends React.Component {
 			books : books
 		}
 	}
-
+/*<BookList books={books}/>*/
 	componentDidMount() {
 	}
 	
@@ -49,12 +53,7 @@ class Student extends React.Component {
 	    return (
 	    	<section className="student">
 	    		<Banner />
-	    		<div className="toolBar">
-	    			<input type="text" placeholder="请输入书名/作者等关键字"/>
-	    			<Switch value={['所有','我的']}/>
-	    			<Button value="搜索"/>
-	    		</div>
-	    		<BookList books={books}/>
+	    		{this.props.children}
 		    </section>
 	      
 	    );

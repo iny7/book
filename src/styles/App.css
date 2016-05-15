@@ -3,6 +3,7 @@ html,body,#app{
   height: 100%;
 }
 body {
+  font-family:'Microsoft Yahei';
   color: #fff;
   background: #222;
 
@@ -14,6 +15,10 @@ ul,ol{
 }
 figure{
   margin:0;
+}
+a{
+  color:inherit;
+  text-decoration:none;
 }
 .index{
   height: 100%;

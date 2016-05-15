@@ -5,7 +5,7 @@ import React from 'react';
 import Button from './grain/Button';
 import {Link} from 'react-router'
 
-class Book extends React.Component {
+class BookPage extends React.Component {
 	//in ES6, you can not use getIntialState() {} to initial react component
 	constructor(props, context) {
 	    super(props, context);
@@ -15,24 +15,12 @@ class Book extends React.Component {
 	    e.preventDefault()。*/
 
 	render() {
-		var book = this.props.value;
-		var id = book.id;
-		var name = book.name;
-		var author = book.author;
-		var url = book.url;
+		
 		
 	    return (
-	    	<Link to={'/student/books/'+id} className="book" href="">
-	    		<figure>
-	    			<div className="mask">
-	    				<Button value="借阅"/>
-	    			</div>
-		    		<img src={url} alt={name} />
-	    			<figcaption>{name}</figcaption>
-			    </figure>
-			</Link>
+	    	<div>book page</div>
 	    );
 	}
 }
 
-export default Book;
+export default BookPage;

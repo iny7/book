@@ -3,6 +3,8 @@ require('styles/bookList.css');
 
 import React from 'react';
 import Book from './Book'
+import Switch from './grain/Switch';
+import Button from './grain/Button';
 
 class BookList extends React.Component {
 	//in ES6, you can not use getIntialState() {} to initial react component
@@ -16,12 +18,18 @@ class BookList extends React.Component {
 	render() {
 		
 	    return (
-	    	<ul className="bookList">
-	    		{this.props.books.map(function(elem, index) {
-	    			return <li key={index}><Book value={elem} /></li>
-	    		})}
-		    </ul>
-	      
+	    	<div>
+		    	<div className="toolBar">
+	    			<input type="text" placeholder="请输入书名/作者等关键字"/>
+	    			<Button value="搜索"/>
+	    			<Switch value={['所有','我的']}/>
+		    	</div>
+		    	<ul className="bookList">
+		    		{this.props.books.map(function(elem, index) {
+		    			return <li key={index}><Book value={elem} /></li>
+		    		})}
+			    </ul>
+	      	</div>
 	    );
 	}
 }

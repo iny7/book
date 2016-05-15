@@ -7,11 +7,13 @@
 	margin:5px 20px -5px 20px;
 	height: 30px;
 	width:70px;
-	border:1px solid #CCC;
+	background-color:#CCC;
 	border-radius: 5px;
 	outline:none;
 }
+.btn:hover{
+	background-color:#AAA;
+}
 .btn:active{
 	background-color:#999;
-	border:1px solid #999;
 }
