@@ -45,14 +45,26 @@ class Student extends React.Component {
 	}
 	/*{React.Children.map()*/
 /*<BookList books={books}/>*/
-	componentDidMount() {
+	search(text){
+		alert(text)
+	}
+	showAll() {
+		alert('showAll')
+	}
+	showMine(){
+		alert('showMine')
 	}
 	
 	render() {
 		var books = this.state.books;
 
-		var children = React.Children.map(this.props.children, function(item){
-			return React.cloneElement(item, {books : books})
+		var children = React.Children.map(this.props.children, (item) => {
+			return React.cloneElement(item, {
+				books : books,
+				search : this.search,
+				showAll : this.showAll,
+				showMine : this.showMine
+			})
 		})
 
 	    return (
