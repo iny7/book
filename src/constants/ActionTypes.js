@@ -1,3 +1,5 @@
+// export const SHOW_ALL = 'SHOW_ALL'
+export const SHOW_MINE = 'SHOW_MINE'
 export const ADD_TODO = 'ADD_TODO'
 export const DELETE_TODO = 'DELETE_TODO'
 export const EDIT_TODO = 'EDIT_TODO'

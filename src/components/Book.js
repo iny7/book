@@ -8,6 +8,7 @@ import {Link} from 'react-router'
 class Book extends React.Component {
 	//in ES6, you can not use getIntialState() {} to initial react component
 	constructor(props, context) {
+		
 	    super(props, context);
 	}
 	/*React v0.12 中，事件处理程序返回 false 不再停止事件传播，

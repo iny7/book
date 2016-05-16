@@ -2,21 +2,34 @@ require('normalize.css/normalize.css');
 require('styles/bookList.css');
 
 import React from 'react';
+import { connect } from 'react-redux';
+import { showAll, showMine } from '../actions';
+
 import Book from './Book'
 import Switch from './grain/Switch';
 import Button from './grain/Button';
 
+
+function loadData(props) {
+  props.showAll();
+}
+
 class BookList extends React.Component {
 	//in ES6, you can not use getIntialState() {} to initial react component
 	constructor(props, context) {
+
 	    super(props, context);
+	   
 	    this.state = {
-	      text: this.props.text || ''
+	    	text: this.props.text || ''
 	    }
 	}
-	/*React v0.12 中，事件处理程序返回 false 不再停止事件传播，
-	    取而代之，应该根据需要手动触发 e.stopPropagation() 或 
-	    e.preventDefault()。*/
+	
+	componentWillMount() {
+		console.log("load data")
+	    loadData(this.props)
+	}
+
 	search(){
 		const text = this.state.text;
 		this.props.search(text)
@@ -46,7 +59,9 @@ class BookList extends React.Component {
 	}
 
 	render() {
-		
+
+		const books = this.props.books || [];
+
 	    return (
 	    	<div>
 		    	<div className="toolBar">
@@ -65,13 +80,24 @@ class BookList extends React.Component {
 	    			/>
 		    	</div>
 		    	<ul className="bookList">
-		    		{this.props.books.map(function(elem, index) {
-		    			return <li key={index}><Book value={elem} /></li>
-		    		})}
+		    		{
+		    			books.length == 0 ? <p>no books</p> : books.map(function(elem, index) {
+		    				return <li key={index}><Book value={elem} /></li>
+		    			})
+		    		}
 			    </ul>
 	      	</div>
 	    );
 	}
 }
 
-export default BookList;
+function mapStateToProps(state) {
+	console.log(state)
+  return { books: state.books };
+}
+
+export default connect(mapStateToProps, {
+  showAll,
+  showMine
+})(BookList)
+
