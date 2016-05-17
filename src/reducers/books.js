@@ -1,5 +1,5 @@
 import { ADD_TODO, DELETE_TODO, EDIT_TODO, COMPLETE_TODO, COMPLETE_ALL, CLEAR_COMPLETED } from '../constants/ActionTypes';
-import { SHOW_ALL, SHOW_MINE } from '../constants/BookFilters';
+
 
 // const initialState = [
 //   {
@@ -9,7 +9,6 @@ import { SHOW_ALL, SHOW_MINE } from '../constants/BookFilters';
 //   }
 // ]
 const initialState = {
-      bookFilter: SHOW_ALL,
       books : [
           {
             'id' : 1,
@@ -41,13 +40,6 @@ const initialState = {
 
 export default function(state = initialState, action) {
   switch (action.type) {
-    case SHOW_ALL:
-      console.log('reducer show all')
-      return Object.assign({}, state, {})
-
-    case SHOW_MINE:
-      console.log('reducer show mine')
-      return Object.assign({}, state, {bookFilter: SHOW_MINE})
     
     case ADD_TODO:
       return [

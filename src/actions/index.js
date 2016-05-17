@@ -1,15 +1,5 @@
 import * as types from '../constants/ActionTypes'
-import * as filters from '../constants/BookFilters'
-
-export function showAll() {
-	console.log('action show all')
-	return { type: filters.SHOW_ALL }
-}
-
-export function showMine() {
-	console.log('action show mine')
-  	return { type: filters.SHOW_MINE }
-}
+// import * as filters from '../constants/BookFilters'
 
 export function addTodo(text) {
   return { type: types.ADD_TODO, text }
@@ -34,3 +24,13 @@ export function completeAll() {
 export function clearCompleted() {
   return { type: types.CLEAR_COMPLETED }
 }
+
+// export function showAll() {
+// 	console.log('action show all')
+// 	return { type: filters.SHOW_ALL }
+// }
+
+// export function showMine() {
+// 	console.log('action show mine')
+//   	return { type: filters.SHOW_MINE }
+// }

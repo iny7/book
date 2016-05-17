@@ -22,7 +22,7 @@ class Switch extends React.Component{
 
 Switch.propTypes = {
   value: React.PropTypes.array.isRequired,
-  open: React.PropTypes.func.isRequired,
+  on: React.PropTypes.func.isRequired,
   off: React.PropTypes.func.isRequired
 }
 Switch.defaultProps = {
