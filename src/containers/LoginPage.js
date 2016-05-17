@@ -3,9 +3,10 @@ require('normalize.css/normalize.css');
 import React from 'react';
 import userData from '../data/users';
 // import $ from 'jquery'
+import { connect } from 'react-redux';
 import Link from 'react-router';
 
-import LoginBox from './LoginBox';
+import LoginBox from '../components/LoginBox';
 
 function validate(){
 	var location = this.props.location;
@@ -34,7 +35,7 @@ class LoginPage extends React.Component {
 	render() {
 
 	    return (
-	    	<section className="loginPage">d
+	    	<section className="loginPage">
 	    		<LoginBox validate={validate.bind(this)}
 	    			dragable/>
 		    </section>
@@ -44,3 +45,5 @@ class LoginPage extends React.Component {
 }
 
 export default LoginPage;
+
+

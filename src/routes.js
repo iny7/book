@@ -1,12 +1,14 @@
 import React from 'react';
 import {Route, IndexRoute} from 'react-router';
-import App from './components/Main';
-import LoginPage from './components/LoginPage';
-import Student from './components/Student';
-import BookList from './components/BookList';
-import BookPage from './components/BookPage';
-import Admin from './components/Admin';
-import Info from './components/Info';
+
+import App from './containers/Main';
+import LoginPage from './containers/LoginPage';
+import Student from './containers/Student';
+import Admin from './containers/Admin';
+
+import Info from './containers/Info';
+import BookList from './containers/BookList';
+import BookPage from './containers/BookPage';
 
 function requireLogin(nextState, replaceState) {
 	var hasLogin = true;

@@ -1,41 +1,14 @@
 import * as types from '../constants/ActionTypes'
+import * as filters from '../constants/BookFilters'
 
 export function showAll() {
-	console.log("msg")
-  return (dispatch, getState) => {
-
-  	const books = [
-			{
-				'id' : 1,
-				'name' : '世界尽头与冷酷仙境',
-				'author' : '村上春树',
-				'url' : '/images/1.jpg'
-			},
-			{
-				'id' : 2,
-				'name' : '了不起的盖茨比',
-				'author' : '歪果仁',
-				'url' : '/images/2.jpg'
-			},
-			{
-				'id' : 3,
-				'name' : '幻夜',
-				'author' : '东野圭吾',
-				'url' : '/images/3.jpg'
-			},
-			{
-				'id' : 4,
-				'name' : '白夜行',
-				'author' : '东野圭吾',
-				'url' : '/images/4.jpg'
-			},
-		];
-	return {books : books}
-  }
+	console.log('action show all')
+	return { type: filters.SHOW_ALL }
 }
 
-export function showMine(text) {
-  return { type: types.SHOW_MINE, text }
+export function showMine() {
+	console.log('action show mine')
+  	return { type: filters.SHOW_MINE }
 }
 
 export function addTodo(text) {

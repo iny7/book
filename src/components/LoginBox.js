@@ -4,8 +4,7 @@ require('styles/loginBox.css');
 import React from 'react';
 import userData from '../data/users'
 
-import Link from 'react-router'
-let yeomanImage = require('../images/yeoman.png');
+// let yeomanImage = require('../images/yeoman.png');
 
 class LoginBox extends React.Component {
 	//in ES6, you can not use getIntialState() {} to initial react component

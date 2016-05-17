@@ -5,24 +5,20 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { showAll, showMine } from '../actions';
 
-import Book from './Book'
-import Switch from './grain/Switch';
-import Button from './grain/Button';
+import Book from '../components/Book'
+import Switch from '../components/grain/Switch';
+import Button from '../components/grain/Button';
 
 
 function loadData(props) {
-  props.showAll();
+  
+  console.log(props)
 }
 
 class BookList extends React.Component {
 	//in ES6, you can not use getIntialState() {} to initial react component
 	constructor(props, context) {
-
 	    super(props, context);
-	   
-	    this.state = {
-	    	text: this.props.text || ''
-	    }
 	}
 	
 	componentWillMount() {
@@ -33,7 +29,7 @@ class BookList extends React.Component {
 	search(){
 		const text = this.state.text;
 		this.props.search(text)
-		this.setState({ text: '' })
+		// this.setState({ text: '' })
 	}
 
 	switchOn() {
@@ -59,8 +55,8 @@ class BookList extends React.Component {
 	}
 
 	render() {
-
-		const books = this.props.books || [];
+		
+		const {bookFilter, books} = this.props;
 
 	    return (
 	    	<div>
@@ -68,7 +64,7 @@ class BookList extends React.Component {
 	    			<input 
 	    				type="text" 
 	    				placeholder="请输入书名/作者等关键字" 
-	    				value={this.state.text}
+	    				// value={this.state.text}
 	    				onChange={this.handleChange.bind(this)}
 	    				onKeyDown={this.handleSubmit.bind(this)}
 	    			/>
@@ -92,8 +88,11 @@ class BookList extends React.Component {
 }
 
 function mapStateToProps(state) {
-	console.log(state)
-  return { books: state.books };
+	const { books : {bookFilter, books} } = state;
+	return {
+		bookFilter : bookFilter,
+		books : books
+	}
 }
 
 export default connect(mapStateToProps, {

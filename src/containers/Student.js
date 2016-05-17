@@ -1,9 +1,9 @@
 require('styles/student.css');
 
 import React from 'react';
+import { connect } from 'react-redux';
 
-import Banner from './Banner';
-import BookList from './BookList';
+import Banner from '../components/Banner';
 
 /*注意在不用Flux的情况下,向this.props.children传props的方法*/
 class Student extends React.Component {
@@ -17,6 +17,14 @@ class Student extends React.Component {
 		 for classes created using React.createClass.
 		  Did you mean to define a state property instead?*/
 	}
+			// var children = React.Children.map(this.props.children, (item) => {
+		// 	return React.cloneElement(item, {
+		// 		books : books,
+		// 		search : this.search,
+		// 		showAll : this.showAll,
+		// 		showMine : this.showMine
+		// 	})
+		// })
 	/*{React.Children.map()*/
 /*<BookList books={books}/>*/
 	search(text){
@@ -30,15 +38,9 @@ class Student extends React.Component {
 	}
 	
 	render() {
+		
 
-		// var children = React.Children.map(this.props.children, (item) => {
-		// 	return React.cloneElement(item, {
-		// 		books : books,
-		// 		search : this.search,
-		// 		showAll : this.showAll,
-		// 		showMine : this.showMine
-		// 	})
-		// })
+
 
 	    return (
 	    	<section className="student">
@@ -50,4 +52,4 @@ class Student extends React.Component {
 	}
 }
 
-export default Student;
+export default Student

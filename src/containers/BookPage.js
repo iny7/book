@@ -2,8 +2,9 @@ require('normalize.css/normalize.css');
 require('styles/bookList.css');
 
 import React from 'react';
-import Button from './grain/Button';
-import {Link} from 'react-router'
+// import {Link} from 'react-router'
+
+// import Button from '../components/grain/Button';
 
 class BookPage extends React.Component {
 	//in ES6, you can not use getIntialState() {} to initial react component
