@@ -120,8 +120,5 @@ function mapStateToProps(state) {
 	}
 }
 
-export default connect(mapStateToProps, {
-  // showAll,
-  // showMine
-})(BookList)
+export default connect(mapStateToProps)(BookList)
 
