@@ -70,6 +70,7 @@ export default function(state = initialState, action) {
 
     //network action
     case FETCH_BOOKS_REQUEST:
+      console.log('reducers FETCH_BOOKS_REQUEST')
       return state;
     case SEARCH_BOOK:
       console.log('search:',action.text)

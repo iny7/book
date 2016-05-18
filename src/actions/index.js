@@ -10,6 +10,17 @@ export function filter(text){
 export function search(text){
 	return { type: types.SEARCH_BOOK, text}
 }
+function fetchBooks(){
+	return {
+		type : types.FETCH_BOOKS_REQUEST,
+	    books : 'test'
+	 }
+}
+export function loadBooks(){
+	return (dispatch, getState) => {
+		return dispatch(fetchBooks())
+	}
+}
 
 export function addTodo(text) {
   return { type: types.ADD_TODO, text }

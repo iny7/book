@@ -3,6 +3,7 @@ require('styles/bookList.css');
 
 import React from 'react';
 import { connect } from 'react-redux';
+import { loadBooks } from '../actions';
 import { showAll, showMine, filter, search } from '../actions';
 import { SHOW_ALL, SHOW_MINE, SHOW_KEYWORDS } from '../constants/FilterNames';
 
@@ -21,8 +22,9 @@ const BOOK_FILTERS = {
 }
 
 function loadData(props) {
-  
-  console.log(props)
+	const { dispatch } = props;
+	console.log('**********')
+	dispatch(loadBooks())
 }
 
 class ListPage extends React.Component {
@@ -103,6 +105,8 @@ function mapStateToProps(state) {
 		books : books
 	}
 }
+
+//use this argument will help you to dispatch every function
 function mapDispatchToProps(dispatch){
 	// {
 	// 	showAll,
