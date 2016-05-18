@@ -4,6 +4,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import Banner from '../components/Banner';
+import BreadNav from '../components/BreadNav';
 
 /*注意在不用Flux的情况下,向this.props.children传props的方法*/
 class Student extends React.Component {
@@ -38,13 +39,10 @@ class Student extends React.Component {
 	}
 	
 	render() {
-		
-
-
-
 	    return (
 	    	<section className="student">
 	    		<Banner />
+	    		<BreadNav />
 	    		{this.props.children}
 		    </section>
 	      

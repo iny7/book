@@ -6,9 +6,10 @@ import LoginPage from './containers/LoginPage';
 import Student from './containers/Student';
 import Admin from './containers/Admin';
 
+
 import Info from './containers/Info';
-import BookList from './containers/BookList';
-import BookPage from './containers/BookPage';
+import ListPage from './containers/ListPage';
+import DetailPage from './containers/DetailPage';
 
 function requireLogin(nextState, replaceState) {
 	var hasLogin = true;
@@ -23,12 +24,12 @@ export default (
 		<Route path="login" component={LoginPage} />
 		<Route path="student" onEnter={requireLogin} component={Student}>
 			<IndexRoute component={Info} />
-			<Route path="/books" components={BookList}></Route>
-			<Route path="/books/:id" component={BookPage}></Route>
+			<Route path="/books" component={ListPage} />
+			<Route path="/books/:id" component={DetailPage} />
 		</Route>
 		<Route path="admin" component={Admin}>
 			<IndexRoute component={Info} />
-			<Route path="books" component={BookList}></Route>
+			<Route path="books" component={ListPage}></Route>
 		</Route>
 	</Route>
 )

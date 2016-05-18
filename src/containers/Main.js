@@ -7,8 +7,8 @@ import React from 'react';
 class AppComponent extends React.Component {
 	
 	render() {
-		const { books, actions } = this.props
-		console.log(books)
+		
+
 	    return (
 	      <div className="index">
 	      	{this.props.children}

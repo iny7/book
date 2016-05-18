@@ -6,7 +6,7 @@ import React from 'react';
 
 // import Button from '../components/grain/Button';
 
-class BookPage extends React.Component {
+class DetailPage extends React.Component {
 	//in ES6, you can not use getIntialState() {} to initial react component
 	constructor(props, context) {
 	    super(props, context);
@@ -22,4 +22,4 @@ class BookPage extends React.Component {
 	}
 }
 
-export default BookPage;
+export default DetailPage;

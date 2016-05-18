@@ -1,5 +1,15 @@
 import * as types from '../constants/ActionTypes'
-// import * as filters from '../constants/BookFilters'
+
+/*Each of these functions return an action,and each action is just a descrption of what will happen.
+if you wanna do something, that will be not enough. dispatching this action will help you*/
+
+export function filter(text){
+	return { type: types.FILTER_BOOK, text}
+}
+
+export function search(text){
+	return { type: types.SEARCH_BOOK, text}
+}
 
 export function addTodo(text) {
   return { type: types.ADD_TODO, text }
@@ -25,12 +35,12 @@ export function clearCompleted() {
   return { type: types.CLEAR_COMPLETED }
 }
 
-// export function showAll() {
-// 	console.log('action show all')
-// 	return { type: filters.SHOW_ALL }
-// }
+export function showAll() {
+	console.log('action show all')
+	return { type: types.SHOW_ALL }
+}
 
-// export function showMine() {
-// 	console.log('action show mine')
-//   	return { type: filters.SHOW_MINE }
-// }
+export function showMine() {
+	console.log('action show mine')
+  	return { type: types.SHOW_MINE }
+}
