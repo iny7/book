@@ -1,3 +1,4 @@
+import fetch from 'isomorphic-fetch'
 import * as types from '../constants/ActionTypes'
 
 /*Each of these functions return an action,and each action is just a descrption of what will happen.
@@ -16,34 +17,21 @@ function fetchBooks(){
 	    books : 'test'
 	 }
 }
-export function loadBooks(){
-	return (dispatch, getState) => {
-		return dispatch(fetchBooks())
+function receiveBooks(json) {
+	console.log('receive:',json)
+	return {
+	    type: types.RECEIVE_BOOKS,
+	    books: json.books,
+	    receivedAt: Date.now()
 	}
 }
-
-export function addTodo(text) {
-  return { type: types.ADD_TODO, text }
-}
-
-export function deleteTodo(id) {
-  return { type: types.DELETE_TODO, id }
-}
-
-export function editTodo(id, text) {
-  return { type: types.EDIT_TODO, id, text }
-}
-
-export function completeTodo(id) {
-  return { type: types.COMPLETE_TODO, id }
-}
-
-export function completeAll() {
-  return { type: types.COMPLETE_ALL }
-}
-
-export function clearCompleted() {
-  return { type: types.CLEAR_COMPLETED }
+export function loadBooks(){
+	return (dispatch, getState) => {
+		dispatch(fetchBooks());
+		return fetch('http://127.0.0.1:8080/books')
+	      .then(response => response.json())
+	      .then(json => dispatch(receiveBooks(json)))
+	}
 }
 
 export function showAll() {
