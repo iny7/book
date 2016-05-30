@@ -12,7 +12,6 @@ import configureStore from './store/configureStore';
 const store = configureStore()
 // const history = syncHistoryWithStore(browserHistory, store)
 
-
 ReactDOM.render(
 	<Provider store={store}>
 		<Router history={browserHistory} routes={routes} />
